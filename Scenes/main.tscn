@@ -1,0 +1,321 @@
+[gd_scene load_steps=27 format=3 uid="uid://bi0bx7yuvx3u5"]
+
+[ext_resource type="Texture2D" uid="uid://cbkygbhura0wv" path="res://icon.svg" id="1_cmsm4"]
+[ext_resource type="Script" path="res://Scripts/GameManager.cs" id="1_i7a1q"]
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="2_q1crf"]
+[ext_resource type="Texture2D" uid="uid://cuvttj84x3x0w" path="res://Art/player.png" id="3_sa1a3"]
+[ext_resource type="Script" path="res://Scripts/Dialogue.cs" id="4_t3r6x"]
+[ext_resource type="StyleBox" uid="uid://d0sxkcqrmbpnk" path="res://Themes/button_normal.tres" id="6_6pl4o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n54fm"]
+size = Vector2(26, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp1ui"]
+atlas = ExtResource("3_sa1a3")
+region = Rect2(24, 64, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vc8d"]
+atlas = ExtResource("3_sa1a3")
+region = Rect2(48, 64, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r028a"]
+atlas = ExtResource("3_sa1a3")
+region = Rect2(0, 64, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4jme"]
+atlas = ExtResource("3_sa1a3")
+region = Rect2(24, 64, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn0dw"]
+atlas = ExtResource("3_sa1a3")
+region = Rect2(0, 96, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7jkv"]
+atlas = ExtResource("3_sa1a3")
+region = Rect2(24, 96, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chaa0"]
+atlas = ExtResource("3_sa1a3")
+region = Rect2(48, 96, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0umj"]
+atlas = ExtResource("3_sa1a3")
+region = Rect2(0, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4o6t"]
+atlas = ExtResource("3_sa1a3")
+region = Rect2(24, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwiff"]
+atlas = ExtResource("3_sa1a3")
+region = Rect2(48, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p55ic"]
+atlas = ExtResource("3_sa1a3")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jiua"]
+atlas = ExtResource("3_sa1a3")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcyt4"]
+atlas = ExtResource("3_sa1a3")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_entkg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp1ui")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vc8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r028a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4jme")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn0dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7jkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chaa0")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0umj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4o6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwiff")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p55ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jiua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcyt4")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdr4k"]
+bg_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+
+[sub_resource type="Theme" id="Theme_g64ge"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_wdr4k")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m606t"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_right = 20
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dp45"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_right = 20
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p48b"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_bottom_left = 30
+corner_detail = 1
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_i7a1q")
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment"]
+modulate = Color(0, 1, 0.34902, 1)
+position = Vector2(-231, -170)
+texture = ExtResource("1_cmsm4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Environment"]
+modulate = Color(0, 1, 0.34902, 1)
+position = Vector2(433, 61)
+texture = ExtResource("1_cmsm4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Environment"]
+modulate = Color(0, 1, 0.34902, 1)
+position = Vector2(-129, 186)
+texture = ExtResource("1_cmsm4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_q1crf")
+Friction = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_n54fm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_entkg")
+animation = &"walk_up"
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialogue" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_t3r6x")
+NodePathActorName = NodePath("Padding/VBox/TopPanels/PanelName/Padding/Name")
+NodePathActorDialogue = NodePath("Padding/VBox/PanelDialgoue/Padding/Dialgoue")
+NodePathPanelName = NodePath("Padding/VBox/TopPanels/PanelName")
+NodePathPanelBack = NodePath("Padding/VBox/TopPanels/PanelBack")
+NodePathPanelDialogue = NodePath("Padding")
+NodePathSectionChoices = NodePath("Padding/VBox/VBox")
+
+[node name="Portrait" type="Sprite2D" parent="CanvasLayer/Dialogue"]
+position = Vector2(931, 792)
+scale = Vector2(2, 2)
+texture = ExtResource("1_cmsm4")
+
+[node name="Padding" type="MarginContainer" parent="CanvasLayer/Dialogue"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -280.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_g64ge")
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/Dialogue/Padding"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+
+[node name="TopPanels" type="Control" parent="CanvasLayer/Dialogue/Padding/VBox"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+
+[node name="PanelBack" type="PanelContainer" parent="CanvasLayer/Dialogue/Padding/VBox/TopPanels"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m606t")
+
+[node name="PanelName" type="PanelContainer" parent="CanvasLayer/Dialogue/Padding/VBox/TopPanels"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+offset_right = 200.0
+offset_bottom = 36.0
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2dp45")
+
+[node name="Padding" type="MarginContainer" parent="CanvasLayer/Dialogue/Padding/VBox/TopPanels/PanelName"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="Name" type="Label" parent="CanvasLayer/Dialogue/Padding/VBox/TopPanels/PanelName/Padding"]
+layout_mode = 2
+text = "Minnie"
+autowrap_mode = 3
+
+[node name="PanelDialgoue" type="PanelContainer" parent="CanvasLayer/Dialogue/Padding/VBox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0p48b")
+
+[node name="Padding" type="MarginContainer" parent="CanvasLayer/Dialogue/Padding/VBox/PanelDialgoue"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Dialgoue" type="Label" parent="CanvasLayer/Dialogue/Padding/VBox/PanelDialgoue/Padding"]
+layout_mode = 2
+text = "Why hello there!"
+autowrap_mode = 3
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/Dialogue/Padding/VBox"]
+visible = false
+layout_mode = 2
+
+[node name="Padding" type="Control" parent="CanvasLayer/Dialogue/Padding/VBox/VBox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="Row1" type="GridContainer" parent="CanvasLayer/Dialogue/Padding/VBox/VBox"]
+layout_mode = 2
+columns = 2
+
+[node name="Choice1" type="Button" parent="CanvasLayer/Dialogue/Padding/VBox/VBox/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("6_6pl4o")
+text = "Choice 1"
+
+[node name="Choice2" type="Button" parent="CanvasLayer/Dialogue/Padding/VBox/VBox/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("6_6pl4o")
+text = "Choice 2"
+
+[node name="Row2" type="GridContainer" parent="CanvasLayer/Dialogue/Padding/VBox/VBox"]
+layout_mode = 2
+columns = 2
+
+[node name="Choice3" type="Button" parent="CanvasLayer/Dialogue/Padding/VBox/VBox/Row2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("6_6pl4o")
+text = "Choice 3"
+
+[node name="Choice4" type="Button" parent="CanvasLayer/Dialogue/Padding/VBox/VBox/Row2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("6_6pl4o")
+text = "Choice 4"
