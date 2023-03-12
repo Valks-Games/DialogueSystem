@@ -1,3 +1,5 @@
+using GodotUtils.TopDown;
+
 namespace DialogueSystem;
 
 public partial class Player : CharacterBody2D
@@ -30,7 +32,7 @@ public partial class Player : CharacterBody2D
 
 	private void Animate() 
 	{
-		var rawInputVec = Utils.GetMovementInputRaw("player");
+		var rawInputVec = PlayerUtils.GetMovementInputRaw("player");
 
 		if (rawInputVec == Vector2.Zero)
 			AnimatedSprite2D.InstantPlay("idle");
@@ -47,7 +49,7 @@ public partial class Player : CharacterBody2D
 	private void Move(double delta)
 	{
 		MoveVec *= 1 - Friction;
-		MoveVec += Utils.GetMovementInput("player") * Speed * (float)delta;
+		MoveVec += PlayerUtils.GetMovementInput("player") * Speed * (float)delta;
 		Velocity = MoveVec;
 
 		MoveAndSlide();
