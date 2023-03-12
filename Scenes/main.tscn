@@ -199,7 +199,7 @@ NodePathActorName = NodePath("Padding/VBox/TopPanels/PanelName/Padding/Name")
 NodePathActorDialogue = NodePath("Padding/VBox/PanelDialgoue/Padding/Dialgoue")
 NodePathPanelName = NodePath("Padding/VBox/TopPanels/PanelName")
 NodePathPanelBack = NodePath("Padding/VBox/TopPanels/PanelBack")
-NodePathPanelDialogue = NodePath("Padding/VBox/PanelDialgoue")
+NodePathPanelDialogue = NodePath("Padding/VBox")
 NodePathSectionChoices = NodePath("Padding/VBox/VBox")
 
 [node name="Portrait" type="Sprite2D" parent="CanvasLayer/Dialogue"]
