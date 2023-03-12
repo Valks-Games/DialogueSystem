@@ -171,6 +171,8 @@ texture = ExtResource("1_cmsm4")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("2_q1crf")
+Speed = 1000.0
+Friction = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(1, 2)
