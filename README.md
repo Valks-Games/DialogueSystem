@@ -37,5 +37,7 @@ Gerbo: alright well bye!
 Valk: bye!
 ```
 
+Press `Space Bar` to advance dialogue.
+
 ## Notes
 - There is a bug that skips some dialogue. Have not figured out how to solve it yet.
