@@ -41,3 +41,4 @@ Press `Space Bar` to advance dialogue.
 
 ## Notes
 - There is a bug that skips some dialogue. Have not figured out how to solve it yet.
+- The UI animation is a little funky. The top name panel does not move down with the rest of the dialogue panel when the dialogues are done and everything is suppose to disappear.
