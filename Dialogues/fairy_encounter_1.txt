@@ -1,0 +1,24 @@
+Minnie: How are you?
+
+*choice1: Fine
+*choice2: Terrible
+
+[choice1]
+Rose: Oh that's great!
+Rose: That's really fine!
+[end]
+
+[choice2]
+Rose: Oh what's wrong?
+[end]
+
+Minnie: Well well well..
+
+*choice1: Well?...
+
+[choice1]
+Rose: Ya?
+[end]
+
+Minnie: Bye!
+Rose: Bye!

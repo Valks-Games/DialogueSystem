@@ -13,10 +13,10 @@ namespace DialogueSystem;
 
 public partial class GameManager : Node
 {
-	public static Dialogue Dialogue { get; private set; }
+	public static UIDialogue UIDialogue { get; private set; }
 
 	public override void _Ready()
 	{
-		Dialogue = GetNode<Dialogue>("CanvasLayer/Dialogue");
+		UIDialogue = GetNode<UIDialogue>("CanvasLayer/Dialogue");
 	}
 }

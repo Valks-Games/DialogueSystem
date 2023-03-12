@@ -1,11 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://bi0bx7yuvx3u5"]
+[gd_scene load_steps=26 format=3 uid="uid://bi0bx7yuvx3u5"]
 
 [ext_resource type="Texture2D" uid="uid://cbkygbhura0wv" path="res://icon.svg" id="1_cmsm4"]
 [ext_resource type="Script" path="res://Scripts/GameManager.cs" id="1_i7a1q"]
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="2_q1crf"]
 [ext_resource type="Texture2D" uid="uid://cuvttj84x3x0w" path="res://Art/player.png" id="3_sa1a3"]
-[ext_resource type="Script" path="res://Scripts/Dialogue.cs" id="4_t3r6x"]
-[ext_resource type="StyleBox" uid="uid://d0sxkcqrmbpnk" path="res://Themes/button_normal.tres" id="6_6pl4o"]
+[ext_resource type="Script" path="res://Scripts/UIDialogue.cs" id="5_6ucph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n54fm"]
 size = Vector2(26, 60)
@@ -172,7 +171,6 @@ texture = ExtResource("1_cmsm4")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("2_q1crf")
-Friction = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(1, 2)
@@ -196,12 +194,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("4_t3r6x")
+script = ExtResource("5_6ucph")
 NodePathActorName = NodePath("Padding/VBox/TopPanels/PanelName/Padding/Name")
 NodePathActorDialogue = NodePath("Padding/VBox/PanelDialgoue/Padding/Dialgoue")
 NodePathPanelName = NodePath("Padding/VBox/TopPanels/PanelName")
 NodePathPanelBack = NodePath("Padding/VBox/TopPanels/PanelBack")
-NodePathPanelDialogue = NodePath("Padding")
+NodePathPanelDialogue = NodePath("Padding/VBox/PanelDialgoue")
 NodePathSectionChoices = NodePath("Padding/VBox/VBox")
 
 [node name="Portrait" type="Sprite2D" parent="CanvasLayer/Dialogue"]
@@ -292,30 +290,6 @@ layout_mode = 2
 layout_mode = 2
 columns = 2
 
-[node name="Choice1" type="Button" parent="CanvasLayer/Dialogue/Padding/VBox/VBox/Row1"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = ExtResource("6_6pl4o")
-text = "Choice 1"
-
-[node name="Choice2" type="Button" parent="CanvasLayer/Dialogue/Padding/VBox/VBox/Row1"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = ExtResource("6_6pl4o")
-text = "Choice 2"
-
 [node name="Row2" type="GridContainer" parent="CanvasLayer/Dialogue/Padding/VBox/VBox"]
 layout_mode = 2
 columns = 2
-
-[node name="Choice3" type="Button" parent="CanvasLayer/Dialogue/Padding/VBox/VBox/Row2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = ExtResource("6_6pl4o")
-text = "Choice 3"
-
-[node name="Choice4" type="Button" parent="CanvasLayer/Dialogue/Padding/VBox/VBox/Row2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = ExtResource("6_6pl4o")
-text = "Choice 4"
