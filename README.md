@@ -3,7 +3,7 @@
 ![Preview3](https://user-images.githubusercontent.com/6277739/224518350-491ff4a9-d026-4c52-a462-ca3780750914.PNG)
 
 ## Setup
-1. Install [Godot 4 Mono Beta 16](https://downloads.tuxfamily.org/godotengine/4.0/beta16/mono/)
+1. Install latest Godot 4 C#
 
 ## How to use
 Create a folder called "Dialogues" in root project
@@ -36,6 +36,8 @@ Gerbo: .-.
 Gerbo: alright well bye!
 Valk: bye!
 ```
+
+Press `Space Bar` to advance dialogue.
 
 ## Notes
 - There is a bug that skips some dialogue. Have not figured out how to solve it yet.
